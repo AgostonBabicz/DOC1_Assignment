@@ -47,13 +47,13 @@ jobs:
       - name: Test service URLs
         run: |
           echo "SERVICE_URL=$(minikube service k8s-doc-example --url)"
-          kubectl port-forward service/k8s-doc-example 8081:8081 &> /dev/null &
+          kubectl port-forward service/k8s-doc-example 8080:8080 &> /dev/null &
           sleep 5
-          kubectl port-forward service/k8s-doc-example 8081:8081 &> /dev/null &
+          kubectl port-forward service/k8s-doc-example 8080:8080 &> /dev/null &
 
       - name: Direct Pod Access Test
         run: |
-          curl -i http://localhost:8081/
+          curl -i http://localhost:8080/
       
 
       - name: Cleanup
