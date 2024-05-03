@@ -7,6 +7,7 @@ import via.doc1.devopsdemo.model.Task;
 import via.doc1.devopsdemo.model.TeamMember;
 import via.doc1.devopsdemo.service.TeamService;
 
+
 @RestController
 public class TeamController {
 
@@ -23,7 +24,7 @@ public class TeamController {
     }
 
     @GetMapping("/members/{memberId}")
-    public TeamMember getTaskDetails(@PathVariable String memberId) {
+    public TeamMember getTaskDetails(@PathVariable String memberId){
         return teamService.getTeamMember2(memberId);
     }
 }

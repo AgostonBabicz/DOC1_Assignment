@@ -1,19 +1,19 @@
 package via.doc1.devopsdemo.service;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 import via.doc1.devopsdemo.model.Task;
 import via.doc1.devopsdemo.model.TeamMember;
-import via.doc1.devopsdemo.repository.TeamMemberRepository; 
+import via.doc1.devopsdemo.repository.TeamMemberRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired; 
+
 @Service
 public class TeamService {
-
     @Autowired
     TeamMemberRepository teamRepository;
-
 
     private static final List<TeamMember> team_members = new ArrayList<>();
 
@@ -33,10 +33,6 @@ public class TeamService {
         team_members.add(dora);
     }
 
-    public TeamMember getTeamMember2(String memberId) {
-        return teamRepository.findById(memberId).get();
-        }
-
     public TeamMember getTeamMember (String memberId) {
         for (TeamMember m : team_members) {
             if (m.getId().equals(memberId)) {
@@ -44,6 +40,10 @@ public class TeamService {
             }
         }
         return null;
+    }
+
+    public TeamMember getTeamMember2 (String memberId){
+        return teamRepository.findById(memberId).get();
     }
 
     public List<Task> getTasks(String memberId) {
