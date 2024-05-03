@@ -53,7 +53,7 @@ jobs:
 
       - name: Direct Pod Access Test
         run: |
-          curl -i http://localhost:8080/
+          curl -i http://localhost:8080/members/Member1/tasks/Task4
       
 
       - name: Cleanup
