@@ -31,7 +31,7 @@ jobs:
 
       - name: Deploy to Minikube
         run: |
-          kubectl apply -f backend-deploy.yaml, react-deploy.yaml
+          kubectl apply -f backend-deploy.yaml,react-deploy.yaml
           kubectl wait --for=condition=Ready pod -l app=k8s-doc-example
           kubectl wait --for=condition=Ready pod -l app=doc-react
           kubectl get all
